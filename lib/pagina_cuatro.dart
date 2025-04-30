@@ -1,63 +1,40 @@
 import 'package:flutter/material.dart';
 
-class Paginacuatro extends StatefulWidget {
-  const Paginacuatro({Key? key}) : super(key: key);
+class Pantallacuatro extends StatefulWidget {
+  const Pantallacuatro({Key? key}) : super(key: key);
 
   @override
-  State<Paginacuatro> createState() => _PaginacuatroState();
+  State<Pantallacuatro> createState() => _PantallacuatroState();
 }
 
-class _PaginacuatroState extends State<Paginacuatro> {
-  bool _bool = true;
-
+class _PantallacuatroState extends State<Pantallacuatro> {
+  bool selected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Pantalla cuatro")),
-        backgroundColor: const Color(0xffeac2f2),
+        title: const Center(
+            child: Text("Pantalla cuatro")), // Corregido a "Pantalla cinco"
+        backgroundColor: const Color(0xff9fa8f4),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            width: double.infinity,
-            height: 100,
+      body: GestureDetector(
+        onTap: () {
+          setState(() {
+            selected = !selected;
+          });
+        },
+        child: Center(
+          child: AnimatedContainer(
+            width: selected ? 200.0 : 100.0,
+            height: selected ? 100.0 : 200.0,
+            color: selected ? Colors.blueGrey : Colors.white,
+            alignment:
+                selected ? Alignment.center : AlignmentDirectional.topCenter,
+            duration: const Duration(seconds: 2),
+            curve: Curves.fastOutSlowIn,
+            child: const FlutterLogo(size: 75),
           ),
-          TextButton(
-            onPressed: () {
-              setState(() {
-                _bool = !_bool;
-              });
-            },
-            child: const Text(
-              'Switch',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          AnimatedCrossFade(
-            firstChild: Image.asset(
-              'assets/pagina5/wgato.jpg',
-              width: double.infinity,
-            ),
-            secondChild: Image.asset(
-              'assets/pagina5/wgato2.jpg',
-              width: double.infinity,
-            ),
-            crossFadeState:
-                _bool ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            duration: const Duration(seconds: 1),
-          ),
-          const SizedBox(height: 20), // Espacio adicional
-          Center(
-            child: ElevatedButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Ver pantalla 1'),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
