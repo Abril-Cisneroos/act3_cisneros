@@ -34,7 +34,7 @@ class PaginacincoState extends State<Paginacinco> {
             ElevatedButton(
               child: const Text('Rotate Logo'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orangeAccent,
+                backgroundColor: Color(0xfff2b569),
               ),
               onPressed: () {
                 setState(() => turns += 1 / 4);
