@@ -8,10 +8,13 @@ class FirstScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text("Pantalla uno")), // Título centrado
-        backgroundColor: Colors.blueAccent, // Color de la barra
+        backgroundColor: Color(0xff75a8fe), // Color de la barra
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 50,
+          ),
           Center(
             child: ElevatedButton(
               onPressed: () {
@@ -23,9 +26,41 @@ class FirstScreen extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/second');
+                Navigator.pushNamed(context, '/Pantalla tres');
               },
               child: const Text('ver pantalla 3'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/Pantalla cuatro ');
+              },
+              child: const Text('Ver pantalla 4'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/Pantalla cinco ');
+              },
+              child: const Text('Ver pantalla 5'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/Pantalla seis ');
+              },
+              child: const Text('Ver pantalla 6'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/Pantalla siete ');
+              },
+              child: const Text('Ver pantalla 7'),
             ),
           ),
         ],

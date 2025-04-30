@@ -1,3 +1,7 @@
+//import 'package:cisnerosrutas/pagina_cinco.dart';
+import 'package:cisnerosrutas/pagina_cuatro.dart';
+import 'package:cisnerosrutas/pagina_seis.dart';
+import 'package:cisnerosrutas/pagina_siete.dart';
 import 'package:cisnerosrutas/pagina_tres.dart';
 import 'package:flutter/material.dart';
 import 'package:cisnerosrutas/pagina_uno.dart';
@@ -16,8 +20,12 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const FirstScreen(),
-        '/second': (context) => const SecondScreen(),
+        '/second': (context) => const PaginaDos(),
         '/Pantalla tres': (context) => const Paginatres(),
+        '/Pantalla cuatro': (context) => const Paginacuatro(),
+        //'/Pantalla cinco': (context) => const Paginacinco(),
+        '/Pantalla seis ': (context) => const PaginaSeis(),
+        '/Pantalla siete ': (context) => const PaginaSiete(),
       },
     );
   }
